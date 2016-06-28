@@ -7,11 +7,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.Spanned;
 import android.text.style.ImageSpan;
+import android.util.Log;
 
 import com.example.warmachine.testapplication.R;
-import com.example.warmachine.testapplication.fragment.MyFragment;
+import com.example.warmachine.testapplication.fragment.MyFirstFragment;
+import com.example.warmachine.testapplication.fragment.MySecondFragment;
 
 /**
  * Created by WarMachine on 2016/6/27.
@@ -34,7 +35,17 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter{
 
     @Override
     public Fragment getItem(int position) {
-        return MyFragment.newInstance(position+1);
+        Log.i("MyFragment",Integer.toString(position));
+        switch (position) {
+            case 0:
+                return MyFirstFragment.newInstance(1);
+            case 1:
+                return new MySecondFragment();
+            case 2:
+                return new MySecondFragment();
+            default:
+                return MyFirstFragment.newInstance(0);
+        }
     }
 
     @Override

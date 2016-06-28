@@ -39,7 +39,7 @@ public class MyFirstFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(Tag,"MyFirstFragment OnCreateView");
-        View view = inflater.inflate(R.layout.fragment,container,false);
+        View view = inflater.inflate(R.layout.first_fragment,container,false);
         TextView textView = (TextView) view.findViewById(R.id.mytextview);
         textView.setText("Fragment "+mPage);
         return view;
